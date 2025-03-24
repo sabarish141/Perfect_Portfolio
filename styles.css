@@ -695,6 +695,17 @@ body {
     .timeline-content::before {
         left: -40px !important;
     }
+
+    .resume-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .resume-buttons .btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -709,4 +720,51 @@ body {
     .project-tech {
         justify-content: center;
     }
+}
+
+/* Resume Buttons */
+.resume-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.resume-buttons .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.resume-buttons .btn i {
+    font-size: 1.2rem;
+}
+
+.resume-buttons .primary-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.resume-buttons .secondary-btn {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.resume-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resume-buttons .primary-btn:hover {
+    background: var(--secondary-color);
+}
+
+.resume-buttons .secondary-btn:hover {
+    background: var(--primary-color);
+    color: white;
 } 
