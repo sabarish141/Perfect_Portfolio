@@ -1,4 +1,4 @@
- // Mobile Navigation Toggle
+// Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -57,14 +57,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Form Submission
+// Form Submission with Email
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        // Add your form submission logic here
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
+        
+        const name = contactForm.querySelector('input[type="text"]').value;
+        const email = contactForm.querySelector('input[type="email"]').value;
+        const message = contactForm.querySelector('textarea').value;
+        
+        // Email body formatting
+        const emailBody = `
+            Name: ${name}
+            Email: ${email}
+            Message: ${message}
+        `;
+
+        // Send email using SMTP.js
+        Email.send({
+            Host: "s1.maildns.net",
+            Username: "sabarish27nov@gmail.com", // Replace with your email
+            Password: "Admin@2024", // Replace with your email password
+            To: 'sabarish27nov@gmail.com', // Replace with your receiving email
+            From: email,
+            Subject: `Portfolio Contact Form - Message from ${name}`,
+            Body: emailBody
+        }).then(message => {
+            if(message === "OK") {
+                alert("Thank you! Your message has been sent successfully.");
+                contactForm.reset();
+            } else {
+                alert("There was an error sending your message. Please try again.");
+            }
+        });
     });
 }
 
