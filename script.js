@@ -76,8 +76,8 @@ if (contactForm) {
 
         // Send email using SMTP.js
         Email.send({
-            Host: "s1.maildns.net",
-            Username: "sabarish27nov@gmail.com", // Replace with your email
+            Host: "smtp.gmail.com",
+            Username: "sabarish27hov@gmail.com", // Replace with your email
             Password: "Admin@2024", // Replace with your email password
             To: 'sabarish27nov@gmail.com', // Replace with your receiving email
             From: email,
