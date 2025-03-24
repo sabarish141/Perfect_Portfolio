@@ -75,7 +75,7 @@ if (contactForm) {
         `;
 
         // Send email using SMTP.js
-        email.send({
+        Email.send({
             Host: "smtp.gmail.com",
             Username: "sabarish27hov@gmail.com", // Replace with your email
             Password: "Admin@2024", // Replace with your email password
